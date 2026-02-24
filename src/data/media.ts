@@ -20,8 +20,8 @@ export const photos: string[] = [
 ];
 
 export const videos: string[] = [
-  "1(1).mp4",
-  "1(2).mp4",
+  "1 (1).mp4",
+  "1 (2).mp4",
 ];
 
 // ============================================
