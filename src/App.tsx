@@ -11,7 +11,7 @@ import Gallery from "./pages/Gallery";
 import Videos from "./pages/Videos";
 import Letter from "./pages/Letter";
 import Timeline from "./pages/Timeline";
-import MessageBook from "./pages/MessageBook";
+
 import Finale from "./pages/Finale";
 import NotFound from "./pages/NotFound";
 
@@ -32,7 +32,7 @@ const App = () => (
           <Route path="/videos" element={<Videos />} />
           <Route path="/letter" element={<Letter />} />
           <Route path="/timeline" element={<Timeline />} />
-          <Route path="/book" element={<MessageBook />} />
+          
           <Route path="/finale" element={<Finale />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

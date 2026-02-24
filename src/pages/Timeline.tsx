@@ -47,17 +47,27 @@ const Timeline = () => {
                       isLeft ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"
                     }`}
                   >
-                    <div className="glass rounded-2xl p-6 shadow-card hover:shadow-glow transition-shadow">
-                      <span className="text-3xl mb-2 block">{entry.emoji}</span>
-                      <span className="text-sm font-body text-primary font-medium">
-                        {entry.date}
-                      </span>
-                      <h3 className="font-heading text-xl text-foreground mt-1 mb-2">
-                        {entry.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {entry.description}
-                      </p>
+                    <div className="glass rounded-2xl overflow-hidden shadow-card hover:shadow-glow transition-shadow">
+                      {entry.photo && (
+                        <img
+                          src={`/photos/${entry.photo}`}
+                          alt={entry.title}
+                          className="w-full h-48 object-cover"
+                          loading="lazy"
+                        />
+                      )}
+                      <div className="p-6">
+                        <span className="text-3xl mb-2 block">{entry.emoji}</span>
+                        <span className="text-sm font-body text-primary font-medium">
+                          {entry.date}
+                        </span>
+                        <h3 className="font-heading text-xl text-foreground mt-1 mb-2">
+                          {entry.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {entry.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </motion.div>

@@ -28,6 +28,7 @@ export interface TimelineEntry {
   title: string;
   description: string;
   emoji: string;
+  photo?: string; // Optional photo filename from /public/photos/
 }
 
 export const timelineEntries: TimelineEntry[] = [
@@ -36,24 +37,28 @@ export const timelineEntries: TimelineEntry[] = [
     title: "Where It All Began",
     description: "Add your memory of how you met here...",
     emoji: "✨",
+    // photo: "met.jpg",  // Add a photo from /public/photos/
   },
   {
     date: "First Adventure",
     title: "Our First Trip Together",
     description: "Describe your first adventure together...",
     emoji: "🌸",
+    // photo: "adventure.jpg",
   },
   {
     date: "A Special Moment",
     title: "That One Time...",
     description: "Write about a moment you'll never forget...",
     emoji: "💫",
+    // photo: "special.jpg",
   },
   {
     date: "Recently",
     title: "Still Making Memories",
     description: "A recent memory that made you smile...",
     emoji: "💖",
+    // photo: "recent.jpg",
   },
 ];
 
