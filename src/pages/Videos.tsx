@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import PageTransition from "@/components/PageTransition";
-import { videos } from "@/data/media";
+import { videos, googleDriveVideos } from "@/data/media";
 
 const Videos = () => {
-  const hasVideos = videos.length > 0;
+  const hasLocalVideos = videos.length > 0;
+  const hasGoogleDriveVideos = googleDriveVideos.length > 0;
+  const hasVideos = hasLocalVideos || hasGoogleDriveVideos;
 
   return (
     <PageTransition>
@@ -26,13 +28,39 @@ const Videos = () => {
 
           {hasVideos ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Google Drive Videos */}
+              {googleDriveVideos.map((video, i) => (
+                <motion.div
+                  key={video.id}
+                  className="rounded-2xl overflow-hidden shadow-card group"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.15 }}
+                >
+                  <div className="relative">
+                    <iframe
+                      src={`https://drive.google.com/file/d/${video.id}/preview`}
+                      className="w-full aspect-video rounded-2xl"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    />
+                  </div>
+                  {video.title && (
+                    <p className="mt-2 text-center font-handwritten text-lg text-foreground">
+                      {video.title}
+                    </p>
+                  )}
+                </motion.div>
+              ))}
+
+              {/* Local Videos */}
               {videos.map((video, i) => (
                 <motion.div
                   key={video}
                   className="rounded-2xl overflow-hidden shadow-card group"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.15 }}
+                  transition={{ delay: (googleDriveVideos.length + i) * 0.15 }}
                 >
                   <div className="relative">
                     <video

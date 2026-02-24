@@ -20,8 +20,31 @@ export const photos: string[] = [
 ];
 
 export const videos: string[] = [
-  "1(1).mp4",
-  "1(2).mp4",
+];
+
+// ============================================
+// 🌐 GOOGLE DRIVE VIDEOS
+// ============================================
+// Add Google Drive videos here!
+// Get the file ID from the Google Drive URL:
+// https://drive.google.com/file/d/FILE_ID/view
+// Example: https://drive.google.com/file/d/1kBDL0xF1hsAxN_wTDXnov3IIXK4ibM_2/view
+// File ID: 1kBDL0xF1hsAxN_wTDXnov3IIXK4ibM_2
+
+export interface GoogleDriveVideo {
+  id: string; // The file ID from Google Drive
+  title: string; // Video title
+}
+
+export const googleDriveVideos: GoogleDriveVideo[] = [
+  {
+    id: "1CGlJeHz-bZs1z-UcBh-1cnegybGedWux",
+    title: "Video 1",
+  },
+  {
+    id: "1Fve5rkq4bQfCP1wQMRzfU2Xd8FLFt-9G",
+    title: "Video 2",
+  },
 ];
 
 // ============================================
