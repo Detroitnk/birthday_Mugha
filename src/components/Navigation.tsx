@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Camera, Film, PenLine, Clock, BookOpen, Sparkles, Home } from "lucide-react";
+import { Camera, Film, PenLine, Clock, Sparkles, Home } from "lucide-react";
 
 const navItems = [
   { path: "/", icon: Home, label: "Home" },
@@ -8,7 +8,6 @@ const navItems = [
   { path: "/videos", icon: Film, label: "Videos" },
   { path: "/letter", icon: PenLine, label: "Letter" },
   { path: "/timeline", icon: Clock, label: "Timeline" },
-  { path: "/book", icon: BookOpen, label: "Book" },
   { path: "/finale", icon: Sparkles, label: "Finale" },
 ];
 
