@@ -19,8 +19,7 @@ export const photos: string[] = [
   "1 (11).jpg",
 ];
 
-export const videos: string[] = [
-];
+export const videos: string[] = [];
 
 // ============================================
 // 🌐 GOOGLE DRIVE VIDEOS
@@ -45,6 +44,7 @@ export const googleDriveVideos: GoogleDriveVideo[] = [
     id: "1Fve5rkq4bQfCP1wQMRzfU2Xd8FLFt-9G",
     title: "Video 2",
   },
+
 ];
 
 // ============================================
