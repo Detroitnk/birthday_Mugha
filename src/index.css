@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Dancing+Script:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 340 30% 97%;
+    --foreground: 340 20% 20%;
+
+    --card: 340 25% 96%;
+    --card-foreground: 340 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 20% 20%;
+
+    --primary: 340 60% 72%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 30% 90%;
+    --secondary-foreground: 270 20% 30%;
+
+    --muted: 340 20% 93%;
+    --muted-foreground: 340 10% 50%;
+
+    --accent: 200 40% 88%;
+    --accent-foreground: 200 30% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 340 20% 90%;
+    --input: 340 20% 90%;
+    --ring: 340 60% 72%;
+
+    --radius: 1rem;
+
+    /* Custom palette */
+    --blush: 340 60% 85%;
+    --lavender: 270 40% 88%;
+    --baby-blue: 200 50% 88%;
+    --cream: 40 40% 95%;
+    --peach: 20 60% 88%;
+    --rose-gold: 340 40% 70%;
+    --soft-pink: 340 50% 92%;
+
+    /* Gradients */
+    --gradient-dream: linear-gradient(135deg, hsl(340 60% 92%), hsl(270 40% 92%), hsl(200 50% 92%));
+    --gradient-blush: linear-gradient(180deg, hsl(340 60% 95%), hsl(340 30% 97%));
+    --gradient-glow: radial-gradient(circle, hsl(340 60% 85% / 0.3), transparent 70%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(340 60% 72% / 0.1);
+    --shadow-glow: 0 0 30px hsl(340 60% 72% / 0.15);
+    --shadow-card: 0 8px 32px hsl(340 20% 50% / 0.08);
+
+    /* Fonts */
+    --font-heading: 'Playfair Display', serif;
+    --font-handwritten: 'Dancing Script', cursive;
+    --font-body: 'DM Sans', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .font-handwritten {
+    font-family: var(--font-handwritten);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .bg-dream {
+    background: var(--gradient-dream);
+  }
+
+  .bg-blush-gradient {
+    background: var(--gradient-blush);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass {
+    @apply backdrop-blur-md;
+    background: hsl(0 0% 100% / 0.6);
+    border: 1px solid hsl(0 0% 100% / 0.3);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(340 60% 65%), hsl(270 40% 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes gentle-pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 3s ease-in-out infinite;
+  }
+
+  .animate-gentle-pulse {
+    animation: gentle-pulse 3s ease-in-out infinite;
+  }
+}
