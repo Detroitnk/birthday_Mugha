@@ -1,0 +1,8 @@
+# raw source material — the site uses the processed copies in assets/
+fried_chic/
+new-instrument.mp3
+
+# os junk
+Thumbs.db
+.DS_Store
+desktop.ini
